@@ -209,4 +209,21 @@ class crud
 
         return json_encode($data);
     }
+
+    function getGallery()
+    {
+        $data = [];
+
+        $conn = $this->connect();
+        $sql = "SELECT id, image FROM gallery";
+        $result = $conn->query($sql);
+
+        while ($row = $result->fetch_object()) {
+            $data[] = $row; // Add each object to the array
+        }
+
+        $conn->close();
+
+        return json_encode($data);
+    }
 }

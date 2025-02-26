@@ -6,13 +6,13 @@ if (session_status() == PHP_SESSION_NONE) {
 $logged_in = false;
 if (isset($_SESSION['username'])) {
     $logged_in = true;
-}
+}   
 ?>
 <div class="row">
     <div class="col-md-12">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="./index.php"><img src="./img/icon/GS_logo.svg" width="30" height="30"
-                    class="d-inline-block align-top" alt=""> GoodShoes Inc.</a>
+                    class="d-inline-block align-top" alt="logo"> GoodShoes Inc.</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,10 +26,10 @@ if (isset($_SESSION['username'])) {
                         <a class="nav-link" id="linkProducts" href="./products.php">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="linkGallery" href="#">Gallery</a>
+                        <a class="nav-link" id="linkGallery" href="./gallery.php">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="linkAboutUs" href="#">About Us</a>
+                        <a class="nav-link" id="linkAboutUs" href="./about_us.php">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="linkContactUs" href="#">Contact Us</a>
