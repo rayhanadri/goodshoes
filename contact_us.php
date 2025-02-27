@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
+<?php include "views/header.php"; ?>
 
 <body>
-    <?php include "views/header.php"; ?>
+
     <div class="container-fluid" style="padding: 15px;">
         <?php include "views/navbar.php"; ?>
         <div class="row" style="padding-top: 15px;">

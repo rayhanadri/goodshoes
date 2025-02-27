@@ -9,9 +9,10 @@ if (isset($_SESSION['email'])) {
 ?>
 <!doctype html>
 <html lang="en">
+<?php include "views/header.php"; ?>
 
 <body>
-    <?php include "views/header.php"; ?>
+
     <div class="container-fluid" style="padding: 15px;">
         <?php include "views/navbar.php"; ?>
         <div class="row" style="padding-top: 15px;">
@@ -24,11 +25,13 @@ if (isset($_SESSION['email'])) {
                         <form id="registerForm">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="name"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
