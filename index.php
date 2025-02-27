@@ -35,7 +35,7 @@ $crud = new crud();
                                         </div>
                                         <div class="card-footer">
 
-                                            <button class="btn btn-primary">Details</button>
+                                            <a href="./product_detail.php?id=<?php echo $item["id"]; ?>" class="btn btn-primary">Product Detail</a>
                                         </div>
                                     </div>
                                 </div>

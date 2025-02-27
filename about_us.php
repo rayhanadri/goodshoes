@@ -46,7 +46,7 @@ $crud = new crud();
                         <h4><b>Our Guarantee</b></h4>
                         <p>
                             We are so confident in the quality of our shoes that we offer a 100% satisfaction guarantee.
-                            If you are not happy with your purchase, 1 we will refund your money or exchange your shoes
+                            If you are not happy with your purchase, we will refund your money or exchange your shoes
                             for a different size or style.
                         </p>
                     </div>

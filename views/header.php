@@ -21,5 +21,7 @@
 
     <!-- File local CSS -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="icon" href="./img/icon/GS_logo.svg" type="image/x-icon">
     <title>Title</title>
 </head>

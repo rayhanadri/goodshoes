@@ -3,10 +3,10 @@ include "../crud/crud.php";
 $crud = new crud();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = htmlspecialchars($_POST["username"]);
+    $email = htmlspecialchars($_POST["email"]);
     $password = htmlspecialchars($_POST["password"]);
 
-    $json = $crud->checkLogin($username, $password);
+    $json = $crud->checkLogin($email, $password);
     //
     $resultJson = json_decode($json);
     $checkLoginResult = $resultJson->result;
@@ -15,7 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($checkLoginResult) {
         session_start();
         session_unset();
-        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
+
+        $name = $crud->getName($email);
+        $type = $crud->getUserType($email);
+        $_SESSION['name'] = $name;
+        $_SESSION['type'] = $type;
     }
 
     $data = array(

@@ -2,5 +2,5 @@
 include "../crud/crud.php";
 $crud = new crud();
 
-$res = $crud->getProductsLatest3();
+$res = $crud->getProductsLatest4();
 echo $res;

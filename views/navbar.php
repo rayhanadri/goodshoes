@@ -4,9 +4,15 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 $logged_in = false;
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['email'])) {
     $logged_in = true;
-}   
+}
+$is_admin = false;
+if (isset($_SESSION['type'])) {
+    if ($_SESSION['type'] == "admin") {
+        $is_admin = true;
+    }
+}
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -32,8 +38,16 @@ if (isset($_SESSION['username'])) {
                         <a class="nav-link" id="linkAboutUs" href="./about_us.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="linkContactUs" href="#">Contact Us</a>
+                        <a class="nav-link" id="linkContactUs" href="./contact_us.php">Contact Us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="linkDiskon" href="./hitung_belanja.html">Hitung Diskon</a>
+                    </li>
+                    <?php if ($is_admin == true) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" id="linkMessage" href="./message.php">Message List</a>
+                        </li>
+                    <?php } ?>
 
                     <?php if ($logged_in == true) { ?>
                         <li class="nav-item">
@@ -53,12 +67,12 @@ if (isset($_SESSION['username'])) {
         </nav>
     </div>
 </div>
-<?php if (isset($_SESSION['username'])) { ?>
+<?php if (isset($_SESSION['email'])) { ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div style="padding: 15px;">
-                    Hello <b><?php echo $_SESSION['username'] ?></b> have a nice day!
+                    Hello <b><?php echo $_SESSION['name'] ?></b> (<?php echo $_SESSION['type'] ?>) have a nice day!
                 </div>
             </div>
         </div>

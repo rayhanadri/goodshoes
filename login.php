@@ -2,7 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['email'])) {
     header("Location: index.php");
     exit();
 }
@@ -23,9 +23,8 @@ if (isset($_SESSION['username'])) {
                     <div class="card-body">
                         <form id="loginForm">
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username"
-                                    placeholder="username">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="email">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
@@ -60,12 +59,6 @@ if (isset($_SESSION['username'])) {
 
     // --- login check
     // Add event listener for form submission
-
-    <?php
-    $rootUrl = "http" . (isset($_SERVER['HTTPS']) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-    ?>
-    let backendUrl = '<?php echo $rootUrl ?>' + 'process/checkLogin.php';
-
     document.getElementById('loginForm').addEventListener('submit', async function (event) {
         event.preventDefault();  // Prevent default form submission
 
